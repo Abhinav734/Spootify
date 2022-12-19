@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import DiscoverItem from './DiscoverItem';
@@ -15,21 +15,7 @@ function scrollContainer(id, { isNegative } = {}) {
 
 export default function DiscoverBlock({ text, id, data, imagesKey = 'images' }) {
 
-  useEffect(() => {
-    fetch('https://api.spotify.com/v1/browse/new-releases', {headers: new Headers(
-      {
-        'Content-type': 'application/json',
-        'Authorization': `Bearer BQBeWN4c9GB_0i_HA7m84g1z720lSC1UjwO6hpJ--yPbC97q4SWF1FsLodFcQQctulhbN6EARoJtSbzZJflYi_Se8C0XJ_U8NDPH7g_e7DJPmYiMd6Nsikf8k5t0D8FJu40VxNTNX6KqThnm-x12xzttl1Ay9r6SgTrXuurevr6SztIzoZMmsaJLRUQt__k`
-  })})
-       .then((response) => response.json())
-       .then((data) => {
-          console.log(data);
-          
-       })
-       .catch((err) => {
-          console.log(err.message);
-       });
- }, []);
+
   return (
     <div className="discover-block">
       <div className="discover-block__header">
